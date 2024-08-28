@@ -1,0 +1,11 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.fundo {
+  background-image: linear-gradient(black, rgb(17, 17, 17), rgb(37, 37, 37));
+  height: auto;
+  width: 100%;
+}/*# sourceMappingURL=usuarios.css.map */
