@@ -12,18 +12,21 @@
   <div class="background">
     <div class="opacity">
         <header>
+          <div class="logo">
             <img src="images/Netflix_Logo_RGB.png" alt="logo netflix">
+          </div>
         </header>
         <form action="" method="post">
             <h3>Entrar</h3>
-            <input type="text" placeholder="Email ou número de celular">
-            <input type="password" placeholder="Senha">
+            <input type="text" placeholder="Email ou número de celular" id="email" name="email">
+            <input type="password" placeholder="Senha" id="senha" name="senha">
             <a href="usuarios.html" class="entrar">Entrar</a>
             <p>OU</p>
-            <button>Usar um código de acesso</button>
-            <a href="#">Esqueceu a senha?</a>
-            <input type="checkbox" name="" id=""> <label for="">Lembre-se de mim</label>
-            <p>Novo por aqui?</p><a href="#"> Assine agora.</a>
+            <button class="acesso">Usar um código de acesso</button>
+            <a href="#" class="esqueceu">Esqueceu a senha?</a>
+            <div class="lembre"><input type="checkbox" name="lembrar" id="lembrar"><label for="lembre-se">Lembre de mim</label></div>
+            
+            <p>Novo por aqui?</p><a href="cadastro.html" class="cadastro"> Assine agora.</a>
         </form>
     </div>
   </div>  
