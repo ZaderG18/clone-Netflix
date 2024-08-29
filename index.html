@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix</title>
+    <title>Login - Netflix</title>
     <link rel="shortcut icon" href="images/Netflix_Symbol_RGB.png" type="image/x-icon">
     <link rel="stylesheet" href="sass/netflix.css">
 </head>
 <body>
-  <script src="settings.py"></script>
   <div class="background">
     <div class="opacity">
         <header>
@@ -16,19 +15,23 @@
             <img src="images/Netflix_Logo_RGB.png" alt="logo netflix">
           </div>
         </header>
-        <form action="" method="post">
+        <form id="loginForm">
             <h3>Entrar</h3>
-            <input type="text" placeholder="Email ou número de celular" id="email" name="email">
-            <input type="password" placeholder="Senha" id="senha" name="senha">
-            <a href="usuarios.html" class="entrar">Entrar</a>
+            <input type="text" placeholder="Email ou número de celular" id="email" name="email" required>
+            <input type="password" placeholder="Senha" id="senha" name="senha" required>
+            <button type="submit" class="entrar">Entrar</button>
             <p>OU</p>
-            <button class="acesso">Usar um código de acesso</button>
+            <button type="button" class="acesso">Usar um código de acesso</button>
             <a href="#" class="esqueceu">Esqueceu a senha?</a>
-            <div class="lembre"><input type="checkbox" name="lembrar" id="lembrar"><label for="lembre-se">Lembre de mim</label></div>
-            
-            <p>Novo por aqui?</p><a href="cadastro.html" class="cadastro"> Assine agora.</a>
+            <div class="lembre">
+                <input type="checkbox" name="lembrar" id="lembrar">
+                <label for="lembrar">Lembre de mim</label>
+            </div>
+            <p>Novo por aqui? <a href="cadastro.html" class="cadastro">Assine agora.</a></p>
         </form>
     </div>
   </div>  
+
+  <script src="js/login.js"></script>
 </body>
 </html>

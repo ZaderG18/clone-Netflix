@@ -8,11 +8,27 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
     var celular = document.getElementById("celular").value;
     var senha = document.getElementById("senha").value;
 
+    // Validação básica dos campos vazios
     if (!nome || !email || !cpf || !celular || !senha) {
-        console.log('Campos obrigatórios faltando');
         document.getElementById("mensagem").textContent = 'Todos os campos são obrigatórios!';
         return;
     }
+
+    // Validação do email
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        document.getElementById("mensagem").textContent = 'Por favor, insira um email válido!';
+        return;
+    }
+
+    // Validação da senha
+    var senhaPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!senhaPattern.test(senha)) {
+        document.getElementById("mensagem").textContent = 'A senha deve ter no mínimo 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial!';
+        return;
+    }
+
+    console.log('Campos validados:', { nome, email, cpf, celular, senha });
 
     var dados = {
         nome: nome,
@@ -22,21 +38,30 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
         senha: senha
     };
 
-    // Simulando uma resposta do servidor
-    setTimeout(function() {
-        const simulatedResponse = {
-            success: true
-        };
-
-        console.log('Resposta simulada:', simulatedResponse);
-        if (simulatedResponse.success) {
+    // Envio dos dados para o servidor (simulação)
+    fetch('/cadastrar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Resposta do servidor:', data);
+        if (data.success) {
             document.getElementById("mensagem").textContent = 'Cadastro realizado com sucesso!';
             document.getElementById('cadastroForm').reset();
         } else {
             document.getElementById("mensagem").textContent = 'Erro ao realizar cadastro.';
         }
-    }, 1000);
+    })
+    .catch((error) => {
+        console.error('Erro:', error);
+        document.getElementById("mensagem").textContent = 'Erro ao conectar ao servidor.';
+    });
 });
+
 
 // server.js
 const express = require('express');
