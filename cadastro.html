@@ -1,31 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastre-se</title>
     <link rel="stylesheet" href="sass/cadastro.css">
+    <link rel="shortcut icon" href="images/Netflix_Symbol_RGB.png" type="image/x-icon">
 </head>
 <body>
     <div class="background">
         <div class="opacity">
             <header>
                 <div class="logo">
-                    <img src="images/Netflix_Logo_RGB.png" alt="logo">
+                    <img src="images/Netflix_Logo_RGB.png" alt="Netflix logo">
                 </div>
-                 
             </header>
             <form action="" method="post" id="cadastroForm">
                 <h2>Cadastre-se</h2>
+                
+                <label for="nome">Nome:</label>
+                <input type="text" placeholder="Informe seu nome" id="nome" name="nome" required>
 
-                <input type="text" placeholder="Informe seu nome" id="nome" name="nome">
-                <input type="email" placeholder="Informe seu email" id="email" name="email">
-                <input type="text" placeholder="informe seu cpf" id="cpf" name="cpf">
-                <input type="text" placeholder="Informe seu celular" id="celular" name="celular">
-                <input type="password" placeholder="Crie uma senha" id="senha" name="senha">
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Informe seu email" id="email" name="email" required>
 
-                <button type="submit" value="cadastrar">cadastrar</button>
-                <p>Já contém cadastro?</p> <button><a href="index.html" style="text-decoration: none; color:aliceblue;">Entrar</a></button>
+                <label for="cpf">CPF:</label>
+                <input type="text" placeholder="Informe seu CPF" id="cpf" name="cpf" pattern="\d{11}" title="Digite 11 números sem pontos ou traços" required>
+
+                <label for="celular">Celular:</label>
+                <input type="tel" placeholder="Informe seu celular" id="celular" name="celular" pattern="\d{11}" title="Digite 11 números sem espaços ou traços" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" placeholder="Crie uma senha" id="senha" name="senha" required>
+
+                <button type="submit" value="cadastrar" >Cadastrar</button>
+                <p>Já contém cadastro?</p> 
+                <a href="index.html" style="text-decoration: none; color: aliceblue;">
+                    <button type="button">Entrar</button>
+                </a>
             </form>
             <div id="mensagem"></div>
         </div>

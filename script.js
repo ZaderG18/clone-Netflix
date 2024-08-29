@@ -1,23 +1,19 @@
 document.getElementById('cadastroForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    console.log('Formulário submetido');
 
-
-    // obtendo valores dos campos
     var nome = document.getElementById("nome").value;
     var email = document.getElementById("email").value;
     var cpf = document.getElementById("cpf").value;
     var celular = document.getElementById("celular").value;
     var senha = document.getElementById("senha").value;
 
-
-    // valiação básica
     if (!nome || !email || !cpf || !celular || !senha) {
-        document.getElementById("mensagem").textContent = 'Todos os campos são obrigatórios! ';
+        console.log('Campos obrigatórios faltando');
+        document.getElementById("mensagem").textContent = 'Todos os campos são obrigatórios!';
         return;
     }
 
-
-    // Cria um objeto com os dados do formulário
     var dados = {
         nome: nome,
         email: email,
@@ -26,25 +22,35 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
         senha: senha
     };
 
+    // Simulando uma resposta do servidor
+    setTimeout(function() {
+        const simulatedResponse = {
+            success: true
+        };
 
-    // Envia os dados para o servidor usando Fetch API
-    fetch('/cadastrar', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/JSON'
-        },
-        body: JSON.stringify(dados)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
+        console.log('Resposta simulada:', simulatedResponse);
+        if (simulatedResponse.success) {
             document.getElementById("mensagem").textContent = 'Cadastro realizado com sucesso!';
+            document.getElementById('cadastroForm').reset();
         } else {
             document.getElementById("mensagem").textContent = 'Erro ao realizar cadastro.';
         }
-    })
-    .catch((error) => {
-        console.error('Erro:', error);
-        document.getElementById("mensagem").textContent = 'Erro ao conectar ao servidor.';
-    });
+    }, 1000);
+});
+
+// server.js
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.use(express.json());
+
+app.post('/cadastrar', (req, res) => {
+    console.log('Dados recebidos:', req.body);
+    // Simulando uma resposta bem-sucedida
+    res.json({ success: true });
+});
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 });

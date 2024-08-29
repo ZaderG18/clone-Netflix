@@ -60,7 +60,7 @@ form input{
     border: 1px solid white;
     color: aliceblue;
 }
-button{
+button, a{
     padding: 3% 20%;
     border-radius: 7px;
     background-color: red;
@@ -74,7 +74,7 @@ button{
 button:hover{
     background-color: rgb(151, 0, 0);
 }
-form a{
+/*form a{
     padding: 5px;
     padding: 5% 26%;
     border-radius: 7px;
@@ -85,7 +85,7 @@ form a{
     margin: 5px;
     transition: 0.5s;
     text-decoration: none;
-}
+}*/
 
 #mensagem {
     margin-top: 10px;
