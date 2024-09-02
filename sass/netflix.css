@@ -114,4 +114,10 @@ p {
   font-weight: 100;
   font-size: 15px;
   align-items: flex-start;
+}
+
+.cadastro {
+  margin: 5px;
+  color: aliceblue;
+  text-decoration: none;
 }/*# sourceMappingURL=netflix.css.map */
