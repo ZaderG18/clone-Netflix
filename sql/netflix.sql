@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS "netflix";
+USE "netflix";
+
+CREATE TABLE IF NOT EXISTS usuarios(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    apelido VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha VARCHAR (20) UNIQUE NOT NULL
+);
+CREATE TABLE IF NOT EXISTS filmes(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(100) NOT NULL,
+    descricao VARCHAR(200) NOT NULL,
+    duracao INT NOT NULL,
+    genero VARCHAR(50) NOT NULL,
+    ano INT NOT NULL,
+    imagem VARCHAR(100) NOT NULL,
+    trailer VARCHAR(100) NOT NULL,
+    avaliacao DECIMAL(3,2) NOT NULL,
+    id_usuario INT NOT NULL,
+);
+CREATE TABLE IF NOT EXISTS series(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(100) NOT NULL,
+    descricao VARCHAR(200) NOT NULL,
+    duracao INT NOT NULL,
+    genero VARCHAR(50) NOT NULL,
+    ano INT NOT NULL,
+    imagem VARCHAR(100) NOT NULL,
+    trailer VARCHAR(100) NOT NULL,
+    avaliacao DECIMAL(3,2) NOT NULL,
+    id_usuario INT NOT NULL,
+    epsiodios VARCHAR(100) NOT NULL
+);
