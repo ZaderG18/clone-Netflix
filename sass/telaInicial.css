@@ -1,7 +1,7 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
 }
 
 body {
@@ -27,6 +27,8 @@ body {
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Adicionado para permitir quebra de linha */
 }
 
 .logo img {
@@ -39,6 +41,7 @@ body {
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  flex-wrap: wrap; /* Adicionado para permitir quebra de linha */
 }
 
 .menu-left, .menu-right {
@@ -51,6 +54,7 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
+  flex-wrap: wrap; /* Adicionado para permitir quebra de linha */
 }
 
 .menu ul li {
@@ -84,7 +88,8 @@ body {
 }
 
 .banner .poster {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
 }
 
 .banner .subtitulo {
@@ -96,6 +101,8 @@ body {
 
 .buttons {
   margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap; /* Adicionado para permitir quebra de linha */
 }
 
 .buttons .btn {
@@ -132,4 +139,70 @@ body {
   position: absolute;
   left: 3.75rem;
   right: 0;
+}
+
+.slider .filmes {
+  min-width: 19.3%;
+}
+
+.slider .filmes img {
+  max-width: 100%;
+  padding-right: 5px;
+}
+
+.footer {
+  margin: 100px auto 0;
+  width: 80%;
+  color: #808080;
+}
+
+.footer .social i {
+  padding-right: 26px;
+  font-size: 26px;
+}
+
+.flex {
+  display: flex;
+  padding-bottom: 80px;
+  flex-wrap: wrap; /* Adicionado para permitir quebra de linha */
+}
+
+.footer .info {
+  width: 100%;
+  max-width: 25%;
+  margin-bottom: 20px; /* Adicionado para espaçamento entre as colunas */
+}
+
+.footer .info ul {
+  list-style: none;
+  display: inline;
+  font-size: 12px;
+}
+
+.footer .info ul li {
+  margin-top: 8px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 1.5rem;
+  }
+  .banner {
+    width: 80%;
+  }
+  .slider .filmes {
+    min-width: 45%;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    padding: 0 1rem;
+  }
+  .banner {
+    width: 100%;
+  }
+  .slider .filmes {
+    min-width: 100%;
+  }
 }/*# sourceMappingURL=telaInicial.css.map */

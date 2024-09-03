@@ -1,7 +1,6 @@
 *{
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
 }
 body{
     font-family: Arial, sans-serif;
@@ -10,11 +9,13 @@ body{
 }
 .container{
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.2) 20%,
-    rgba(20, 20, 20, 0.2) 80%,
-    rgba(20, 20, 20, 1) 100%
-    ), url(../images/bannerOnePiece.jpg);
+    background-image: linear-gradient(
+        to bottom, rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.2) 20%,
+        rgba(20, 20, 20, 0.2) 80%,
+        rgba(20, 20, 20, 1) 100%
+    ), 
+    url(../images/bannerOnePiece.jpg);
     background-size: cover;
     padding: 0.26rem 0.75rem 0 0.75rem;
 }
@@ -27,6 +28,8 @@ body{
 .header{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Adicionado para permitir quebra de linha */
 }
 .logo img{
     width: 5.8rem;
@@ -37,6 +40,7 @@ body{
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    flex-wrap: wrap; /* Adicionado para permitir quebra de linha */
 }
 .menu-left, .menu-right{
     display: flex;
@@ -47,6 +51,7 @@ body{
     list-style: none;
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Adicionado para permitir quebra de linha */
 }
 .menu ul li{
     padding-right: .9rem;
@@ -73,7 +78,8 @@ body{
     width: 50%;
 }
 .banner .poster{
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
 }
 .banner .subtitulo{
     font-size: 1.25rem;
@@ -83,6 +89,8 @@ body{
 }
 .buttons{
     margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap; /* Adicionado para permitir quebra de linha */
 }
 .buttons .btn{
     color: aliceblue;
@@ -114,4 +122,63 @@ body{
     position: absolute;
     left: 3.75rem;
     right: 0;
+}
+.slider .filmes{
+    min-width: 19.3%;
+}
+.slider .filmes img{
+    max-width: 100%;
+    padding-right: 5px;
+}
+.footer{
+    margin: 100px auto 0;
+    width: 80%;
+    color: #808080;
+}
+.footer .social i{
+    padding-right: 26px;
+    font-size: 26px;
+}
+.flex{
+    display: flex;
+    padding-bottom: 80px;
+    flex-wrap: wrap; /* Adicionado para permitir quebra de linha */
+}
+.footer .info{
+    width: 100%;
+    max-width: 25%;
+    margin-bottom: 20px; /* Adicionado para espaçamento entre as colunas */
+}
+.footer .info ul{
+    list-style: none;
+    display: inline;
+    font-size: 12px;
+}
+.footer .info ul li{
+    margin-top: 8px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .hero{
+        padding: 0 1.5rem;
+    }
+    .banner{
+        width: 80%;
+    }
+    .slider .filmes{
+        min-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero{
+        padding: 0 1rem;
+    }
+    .banner{
+        width: 100%;
+    }
+    .slider .filmes{
+        min-width: 100%;
+    }
 }
