@@ -15,11 +15,11 @@
             <img src="/static/images/Netflix_Logo_RGB.png" alt="logo netflix">
           </div>
         </header>
-        <form id="loginForm" >
+        <form>
             <h3>Entrar</h3>
             <input type="text" placeholder="Email ou número de celular" id="email" name="email" required>
             <input type="password" placeholder="Senha" id="senha" name="senha" required>
-            <button type="submit" class="entrar">Entrar</button>
+            <button type="submit" class="entrar" id="reset" onclick="validarLogin(); return false">Entrar</button>
             <p>OU</p>
             <button type="button" class="acesso">Usar um código de acesso</button>
             <a href="#" class="esqueceu">Esqueceu a senha?</a>
@@ -32,6 +32,6 @@
     </div>
   </div>  
 
-    <script src="/static/js/script.js"></script>
+    <script src="/static/js/login.js"></script>
 </body>
 </html>
