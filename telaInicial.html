@@ -4,158 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/sass/telaInicial.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="shortcut icon" href="images/Netflix_Symbol_RGB.png" type="image/x-icon">
-    <title>Netflix</title>
+    <title>Netflix Clone</title>
 </head>
 <body>
-    
-<div class="container">
+    <div class="container">
 
-    <!--Inicio do hero-->
-    <div class="hero">
+        <!-- Hero Section -->
+        <section class="hero">
 
-        <!-- Inicio do header-->
-        <div class="header">
+            <!-- Header -->
+            <header class="header">
+                <div class="logo">
+                    <img src="/static/images/Netflix_Logo_RGB.png" alt="Logo Netflix">
+                </div>
 
-            <!--Logo-->
-            <div class="logo">
-                <img src="/static/images/Netflix_Logo_RGB.png" alt="Logo Netflix">
-            </div>
-
-            <!--Menu-->
-            <div class="menu">
-                <!--Menu left-->
-                <div class="menu-left">
-                    <ul>
+                <nav class="menu">
+                    <!-- Menu Left -->
+                    <ul class="menu-left">
                         <li>Inicio</li>
                         <li>Séries</li>
                         <li>Filmes</li>
                         <li>Recentes</li>
                         <li>Minha lista</li>
                     </ul>
-                </div> <!-- Fim do menu left -->
 
-                <!--Menu Right-->
-                <div class="menu-right">
-                    <ul>
-                        <li> <i class="fas fa-search"></i></li>
+                    <!-- Menu Right -->
+                    <ul class="menu-right">
+                        <li><i class="fas fa-search"></i></li>
                         <li>Infantil</li>
-                        <li> <i class="fas fa-gift"></i></li>
-                        <li> <i class="fas fa-bell"></i></li>
+                        <li><i class="fas fa-gift"></i></li>
+                        <li><i class="fas fa-bell"></i></li>
                         <li class="user">
-                            <img src="/static/images/usuario.jpg" alt="">
+                            <img src="/static/images/usuario.jpg" alt="Avatar do usuário">
                             <i class="fas fa-sort-down"></i>
                         </li>
                     </ul>
-                </div> <!-- Fim do menu right-->
-            </div><!-- Fim do header-->
-        </div> <!-- Fechamento correto do header -->
+                </nav>
+            </header>
 
-        <!-- Banner -->
-        <div class="banner">
-            <img src="images/bannerOnePiece.jpg" alt="">
-            <span class="subtitulo">
-                One Piece é um anime criado por um artista chamado Eichiiro Oda, traçando uma história de um pirata que estica que tem o sonho de virar o rei dos piratas
-            </span>
-
+            <!-- Banner -->
+            <div class="banner">
+                <img src="static/images/bannerOnePiece.jpg" alt="Banner One Piece">
+                <span class="subtitulo">
+                    One Piece é um anime criado por Eichiiro Oda, com a história de um pirata com o sonho de ser o Rei dos Piratas.
+                </span>
                 <div class="buttons">
-                    <button class="btn"> <i class="fas fa-play"></i>Assistir</button>
-                    <button class="btn"> <i class="fas fa-plus"></i>Minha Lista</button>
-                </div>
-             </div><!-- fechamento do banner -->
-
-             <div class="categoria">
-                <span>Recomendados</span>
-                <div class="filmes">
-                    <img src="/static/images/Castlevania.jpg" alt="">
-                </div>
-                <div class="filmes">
-                    <img src="/static/images/Flash.jpg" alt="">
-                </div>
-                <div class="filmes">
-                    <img src="/static/images/peakyBlinders.jpg" alt="">
-                </div>
-                <div class="filmes">
-                    <img src="/static/images/StrangerThings.jpg" alt="">
-                </div>
-                <div class="filmes">
-                    <img src="/static/images/TheWither.webp" alt="">
-                </div>
-                <div class="filmes">
-                    <img src="images/TheWither.webp" alt="">
+                    <button class="btn"><i class="fas fa-play"></i>Assistir</button>
+                    <button class="btn"><i class="fas fa-plus"></i>Minha Lista</button>
                 </div>
             </div>
-        </div>
+        </section>
 
-             <div class="categoria">
-                <span>Top filmes</span>
-                <div class="filmes">
-                    <img src="images/" alt="">
-                </div>
-                <div class="filmes">
-                    <img src="images/" alt="">
-                </div>
-                <div class="filmes">
-                    <img src="images/" alt="">
-                </div>
-                <div class="filmes">
-                    <img src="images/" alt="">
-                </div>
-                <div class="filmes">
-                    <img src="images/" alt="">
-                </div>
-                <div class="filmes">
-                    <img src="images/" alt="">
-                </div>
-             </div><!-- fechamento das categorias -->
+        <!-- Categorias de Filmes -->
+        <section class="categoria">
+            <span>Recomendados</span>
+            <div class="slider">
+                <div class="filmes"><img src="/static/images/Castlevania.jpg" alt="Castlevania"></div>
+                <div class="filmes"><img src="/static/images/Flash.jpg" alt="Flash"></div>
+                <div class="filmes"><img src="/static/images/peakyBlinders.jpg" alt="Peaky Blinders"></div>
+                <div class="filmes"><img src="/static/images/StrangerThings.jpg" alt="Stranger Things"></div>
+                <div class="filmes"><img src="/static/images/TheWither.webp" alt="The Witcher"></div>
+            </div>
+        </section>
 
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="social">
+                <i class="fas fa-facebook-square"></i>
+                <i class="fas fa-instagram"></i>
+                <i class="fas fa-twitter"></i>
+                <i class="fas fa-youtube"></i>
+            </div>
 
-             <!-- footer -->
-              <div class="footer">
-                <div class="social">
-                    <i class="fas fa-facebook-square"></i>
-                    <i class="fas fa-Instragram"></i>
-                    <i class="fas fa-Twitter"></i>
-                    <i class="fas fa-youtube"></i>
-                </div><!--fechamento social-->
-
-                <div class="flex">
-                    <div class="info">
-                        <ul>Idioma e legendas</ul>
-                        <ul>Privacidade</ul>
-                        <ul>Entre em contato</ul>
-                        <ul>Cadastre seu filme</ul>
-                    </div>
-
-                    <div class="info">
-                        <ul>Idioma e legendas</ul>
-                        <ul>Privacidade</ul>
-                        <ul>Entre em contato</ul>
-                        <ul>Cadastre seu filme</ul>
-                    </div>
-
-                    <div class="info">
-                        <ul>Idioma e legendas</ul>
-                        <ul>Privacidade</ul>
-                        <ul>Entre em contato</ul>
-                        <ul>Cadastre seu filme</ul>
-                    </div>
-
-                    <div class="info">
-                        <ul>Idioma e legendas</ul>
-                        <ul>Privacidade</ul>
-                        <ul>Entre em contato</ul>
-                        <ul>Cadastre seu filme</ul>
-                    </div>
-                </div>
-              </div>
-        </div>
+            <div class="flex">
+                <ul class="info">
+                    <li>Idioma e legendas</li>
+                    <li>Privacidade</li>
+                    <li>Entre em contato</li>
+                    <li>Cadastre seu filme</li>
+                </ul>
+                <!-- Repetir mais blocos de info se necessário -->
+            </div>
+        </footer>
     </div>
-
-</div>
-
-
-
 </body>
 </html>

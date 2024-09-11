@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   padding: 0;
@@ -14,7 +15,7 @@ body {
   height: 100vh;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 20%, rgba(20, 20, 20, 0.2) 80%, rgb(20, 20, 20) 100%), url(../images/bannerOnePiece.jpg);
   background-size: cover;
-  padding: 0.26rem 0.75rem 0 0.75rem;
+  padding: 0.26rem 0.75rem;
 }
 
 .hero {
@@ -27,6 +28,7 @@ body {
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo img {
@@ -84,7 +86,8 @@ body {
 }
 
 .banner .poster {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
 }
 
 .banner .subtitulo {
@@ -128,8 +131,67 @@ body {
 .slider {
   margin-top: 0.8rem;
   display: flex;
-  overflow: hidden;
-  position: absolute;
-  left: 3.75rem;
-  right: 0;
+  gap: 1rem; /* Adiciona espaço entre os filmes */
+  overflow-x: auto; /* Permite rolagem horizontal */
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory; /* Faz o slider "encaixar" nos itens ao rolar */
+}
+
+/* Filme individual */
+.slider .filmes {
+  flex: 0 0 auto; /* Evita que o item flex estique */
+  scroll-snap-align: start; /* Faz o item "parar" no começo ao rolar */
+}
+
+/* Estilos para as imagens dos filmes */
+.slider .filmes img {
+  width: 180px; /* Largura fixa para todas as imagens */
+  height: 270px; /* Altura fixa para todas as imagens */
+  -o-object-fit: cover;
+     object-fit: cover; /* Garante que as imagens se ajustem sem distorção */
+  border-radius: 8px; /* Cantos arredondados nas imagens */
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 1.5rem;
+  }
+  .banner {
+    width: 75%;
+  }
+  .banner .subtitulo {
+    font-size: 1.1rem;
+  }
+  .buttons .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .slider .filmes img {
+    width: 150px; /* Ajusta o tamanho das imagens para telas menores */
+    height: 225px;
+  }
+}
+/* Responsividade para smartphones */
+@media (max-width: 480px) {
+  .hero {
+    padding: 0 1rem;
+  }
+  .banner {
+    width: 100%;
+  }
+  .banner .subtitulo {
+    font-size: 1rem;
+  }
+  .buttons .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .slider {
+    left: 1rem;
+  }
+  .slider .filmes img {
+    width: 120px; /* Ajusta o tamanho das imagens para smartphones */
+    height: 180px;
+  }
 }/*# sourceMappingURL=telaInicial.css.map */

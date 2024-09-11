@@ -1,90 +1,106 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-body{
+
+body {
     font-family: Arial, sans-serif;
     margin: 0 auto;
     background-color: black;
 }
-.container{
+
+.container {
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.2) 20%,
-    rgba(20, 20, 20, 0.2) 80%,
-    rgba(20, 20, 20, 1) 100%
-    ), url(../images/bannerOnePiece.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 20%, rgba(20, 20, 20, 0.2) 80%, rgba(20, 20, 20, 1) 100%), url(../images/bannerOnePiece.jpg);
     background-size: cover;
-    padding: 0.26rem 0.75rem 0 0.75rem;
+    padding: 0.26rem 0.75rem;
 }
-.hero{
+
+.hero {
     width: 100%;
     height: 100%;
     padding: 0 3rem;
     margin: 0 auto;
 }
-.header{
+
+.header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
-.logo img{
+
+.logo img {
     width: 5.8rem;
 }
-.menu{
+
+.menu {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     align-items: center;
 }
-.menu-left, .menu-right{
+
+.menu-left, .menu-right {
     display: flex;
     color: aliceblue;
     font-size: .87rem;
 }
-.menu ul{
+
+.menu ul {
     list-style: none;
     display: flex;
     align-items: center;
 }
-.menu ul li{
+
+.menu ul li {
     padding-right: .9rem;
 }
-.menu .user img{
+
+.menu .user img {
     width: 2rem;
     margin-right: .5rem;
 }
-.menu .user{
+
+.menu .user {
     display: flex;
     align-items: center;
 }
-.menu i{
+
+.menu i {
     font-size: 20px;
 }
-.menu-right ul li{
+
+.menu-right ul li {
     padding-right: 1.5rem;
 }
-.banner{
+
+.banner {
     height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 50%;
 }
-.banner .poster{
-    width: 450px;
+
+.banner .poster {
+    width: 100%;
+    max-width: 450px;
 }
-.banner .subtitulo{
+
+.banner .subtitulo {
     font-size: 1.25rem;
     color: aliceblue;
     line-height: 1.25;
     padding-top: .5rem;
 }
-.buttons{
+
+.buttons {
     margin-top: 2rem;
 }
-.buttons .btn{
+
+.buttons .btn {
     color: aliceblue;
     padding: 0.6rem 2rem;
     margin-right: .75rem;
@@ -95,23 +111,94 @@ body{
     font-size: 100%;
     border: 0;
 }
-.buttons .btn i{
+
+.buttons .btn i {
     margin-right: 0.5rem;
 }
-.categoria{
+
+.categoria {
     height: 200px;
 }
-.categoria span{
+
+.categoria span {
     color: aliceblue;
     font-size: 18px;
     line-height: 17px;
     font-weight: 600;
 }
-.slider{
+
+.slider {
     margin-top: .8rem;
     display: flex;
-    overflow: hidden;
-    position: absolute;
-    left: 3.75rem;
-    right: 0;
+    gap: 1rem; /* Adiciona espaço entre os filmes */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory; /* Faz o slider "encaixar" nos itens ao rolar */
+}
+
+/* Filme individual */
+.slider .filmes {
+    flex: 0 0 auto; /* Evita que o item flex estique */
+    scroll-snap-align: start; /* Faz o item "parar" no começo ao rolar */
+}
+
+/* Estilos para as imagens dos filmes */
+.slider .filmes img {
+    width: 180px; /* Largura fixa para todas as imagens */
+    height: 270px; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Garante que as imagens se ajustem sem distorção */
+    border-radius: 8px; /* Cantos arredondados nas imagens */
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 1.5rem;
+    }
+
+    .banner {
+        width: 75%;
+    }
+
+    .banner .subtitulo {
+        font-size: 1.1rem;
+    }
+
+    .buttons .btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .slider .filmes img {
+        width: 150px; /* Ajusta o tamanho das imagens para telas menores */
+        height: 225px;
+    }
+
+}
+
+/* Responsividade para smartphones */
+@media (max-width: 480px) {
+    .hero {
+        padding: 0 1rem;
+    }
+
+    .banner {
+        width: 100%;
+    }
+
+    .banner .subtitulo {
+        font-size: 1rem;
+    }
+
+    .buttons .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .slider {
+        left: 1rem;
+    }
+    .slider .filmes img {
+        width: 120px; /* Ajusta o tamanho das imagens para smartphones */
+        height: 180px;
+    }
 }

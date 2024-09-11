@@ -1,94 +1,125 @@
-*{
+* {
     padding: 0;
     margin: 0;
     border: none;
+    box-sizing: border-box; /* Garantir que padding e border sejam incluídos no tamanho total */
 }
 
-body{
+body {
     background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.background{
+
+.background {
     background-image: url(../images/fundoNetflix.jpg);
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-.background .opacity{
+
+.background .opacity {
     background-color: rgba(0, 0, 0, 0.74);
     width: 100%;
-    height: 600px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-header{
-    height: 15%;
-    width: auto;
-    top: 10px;
+
+header {
+    width: 100%;
     padding: 24px 36px;
-    margin: 5px;
-    position: relative;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
-.logo{
-    padding: -8px 0px 0px -8px;
+
+.logo {
+    padding: 0;
 }
-header img{
-    width: 20%;
+
+header img {
+    width: 100px; /* Tamanho fixo ajustado */
     height: auto;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
-    width: 400px;
-    height: auto;
+    width: 90%;
+    max-width: 400px;
     margin: 0 auto;
     color: wheat;
     background-color: rgba(0, 0, 0, 0.596);
-    transform: translate(-50, -50);
-    align-items: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
     padding: 5%;
+    text-align: center;
 }
-form input{
-    margin: 3%;
-    padding: 6% 12%;
+
+form input {
+    margin: 10px 0;
+    padding: 12px;
     border-radius: 7px;
-    align-items: flex-start;
     background-color: rgba(92, 92, 92, 0.171);
     border: 1px solid white;
     color: aliceblue;
+    width: 100%; /* Para garantir que o input ocupe 100% do espaço disponível */
 }
-button, a{
-    padding: 3% 20%;
+
+button, a {
+    padding: 12px;
     border-radius: 7px;
     background-color: red;
     color: aliceblue;
     font-weight: bold;
-    font-size: 20px;
-    margin: 5px;
+    font-size: 18px;
+    margin: 10px 0;
     transition: 0.5s;
+    text-align: center;
+    display: block;
+    width: 100%; /* Botões ocupam 100% da largura */
     text-decoration: none;
 }
-button:hover{
+
+button:hover, a:hover {
     background-color: rgb(151, 0, 0);
 }
-/*form a{
-    padding: 5px;
-    padding: 5% 26%;
-    border-radius: 7px;
-    background-color: red;
-    color: aliceblue;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 5px;
-    transition: 0.5s;
-    text-decoration: none;
-}*/
 
 #mensagem {
     margin-top: 10px;
     color: red;
     text-align: center;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    header img {
+        width: 80px; /* Reduz o tamanho do logo em telas menores */
+    }
+
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    button, a {
+        font-size: 16px;
+    }
+}
+
+/* Responsividade para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    header img {
+        width: 60px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    button, a {
+        font-size: 14px;
+    }
 }
