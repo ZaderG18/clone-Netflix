@@ -1,0 +1,22 @@
+.banner{
+    position: relative;
+}
+.banner-img{
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 75%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 75%);
+}
+.banner-content{
+    position: absolute;
+    width: 100%;
+    padding-left: 6%;
+    bottom: 0;
+}
+.banner-title{
+    width: 90%;
+    max-width: 420px;
+    margin-bottom: 30px;
+}
+.banner-content p{
+    
+}

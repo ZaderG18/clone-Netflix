@@ -1,37 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Netflix</title>
-    <link rel="shortcut icon" href="static/images/Netflix_Symbol_RGB.png" type="image/favicon">
-    <link rel="stylesheet" href="static/sass/netflix.css">
-</head>
-<body>
-  <div class="background">
-    <div class="opacity">
-        <header>
-          <div class="logo">
-            <img src="/static/images/Netflix_Logo_RGB.png" alt="logo netflix">
-          </div>
-        </header>
-        <form>
-            <h3>Entrar</h3>
-            <input type="text" placeholder="Email ou número de celular" id="email" name="email" required>
-            <input type="password" placeholder="Senha" id="senha" name="senha" required>
-            <button type="submit" class="entrar" id="reset" onclick="validarLogin(); return false">Entrar</button>
-            <p>OU</p>
-            <button type="button" class="acesso">Usar um código de acesso</button>
-            <a href="#" class="esqueceu">Esqueceu a senha?</a>
-            <div class="lembre">
-                <input type="checkbox" name="lembrar" id="lembrar">
-                <label for="lembrar">Lembre de mim</label>
-            </div>
-            <p>Novo por aqui? <a href="cadastro.html" class="cadastro">Assine agora.</a></p>
-        </form>
-    </div>
-  </div>  
-
-    <script src="/static/js/login.js"></script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="src/assets/images/Netflix_Symbol_RGB.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Clone</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
